@@ -26,16 +26,6 @@ describe('server.js', function () {
       });
   });
 
-  it('responds to /projects', (done) => {
-    chai.request(server)
-      .get('/projects')
-      .end((err, res) => {
-        expect(err).not.exist;
-        expect(res).to.have.status(200);
-        done();
-      });
-  });
-
   it('responds to /contact', (done) => {
     chai.request(server)
       .get('/contact')
@@ -62,16 +52,6 @@ describe('server.js', function () {
       .end((err, res) => {
         expect(err).not.exist;
         expect(res.text).to.contain('html');
-        done();
-      });
-  });
-
-  it('GET /projects should contain anchor element', (done) => {
-    chai.request(server)
-      .get('/projects')
-      .end((err, res) => {
-        expect(err).not.exist;
-        expect(res.text).to.contain('<a');
         done();
       });
   });
