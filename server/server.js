@@ -3,6 +3,7 @@ const morgan = require ('morgan');
 const bodyParser = require ('body-parser');
 const sgMail = require('@sendgrid/mail');
 
+require ('dotenv');
 
 const app = express();
 
@@ -43,8 +44,8 @@ app.get('/', (req, res) => {
   res.render('index', data);
 });
 
-app.listen(5000, () => {
-  console.log('listening at http://localhost:5000');
+app.listen(process.env.PORT, () => {
+  console.log(`listening at http://localhost:${process.env.PORT}`);
 });
 
 module.exports = app;
