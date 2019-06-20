@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #BD5D38;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #d48a6e;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>Contact John Gadi</h2>
+
+<div class='col-md-12'>
+      <form action="/thanks" method="POST" class='form-group'>
+        <label for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text" class='form-control'>
+
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" name="lastName" type="text" class='form-control'>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" class='form-control'>
+
+        <label for="company">Company:</label>
+        <input id="company" name="company" type="text" class='form-control'>
+
+        <label for="subject">Subject:</label>
+        <input id="subject" name="subject" type="text" class='form-control'>
+
+        <label for="text">Message:</label>
+        <textarea id="text" name="text" type="text" class='form-control'></textarea>
+        
+        <div class='pull-bottom clearfix'>
+          <input type="submit" class='form-control btn-success float-right' />
+        </div>
+      </form>
+</div>
+
+</body>
+</html>
