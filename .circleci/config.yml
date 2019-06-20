@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.11
+      - image: circleci/node:11.15.0
 
     working_directory: ~/repo
 
@@ -26,3 +26,14 @@ jobs:
         
       # run tests!
       - run: yarn test
+
+  deploy:
+    docker:
+      - image: circleci/node:11.15.0
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
